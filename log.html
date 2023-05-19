@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="log.css" />
+</head>
+<bo>
+    <body>
+       <div id="topSect">
+        <div>
+            <img onclick="imgFunc()" src="mentimeter logo.png" alt="">
+        </div>
+        <div>
+            <h1>Welcome back!</h1>
+            <p>Log in to your Mentimeter account</p>
+        </div>
+        
+        <form action="" id="form">
+        
+         <button onclick="fb()" class="divdata"><span><i class="fa-brands fa-square-facebook"></i></span> Log in via Facebook</button>
+         <button onclick="google()" class="divdata but2"><span><i class="fa-brands fa-google"></i></span> Log in via Google</button>
+           <div class="stextdiv"><span class="belowtext">or using email</span></div>
+         <label for="email">Enter your email address</label>
+          <input  type="email" name="email" id="email" />
+           <label for="pass">Choose a password</label>
+          <input type="password" name="Password" id="pass">
+         
+          <input id="submit" type="submit" name="submit" value="Log in" />
+          <div id="loginbut">
+            <h3>Forgot password <span class="choice"> Log in with SSO </span></h3>
+            <h3 class="choice">New to Mentimeter? <span onclick="signUpFunc()"> Sign up now</span></h3>
+          </div>
+        </form>
+    </div>
+      </body>
+      <script>
+   let data=JSON.parse(localStorage.getItem("userdata")) || [];
+   console.log(data);
+    document.querySelector("form").addEventListener("submit",logging);
+
+    
+        function logging(event){
+          event.preventDefault();
+          
+           let person_email=document.querySelector("#email").value;
+           let password=document.querySelector("#pass").value;
+           console.log(person_email,password)
+           let flag =false;
+        for(i=0;i<data.length;i++){
+            if(person_email==data[i].person_email &&password==data[i].password){
+                flag=true;
+            }
+        };
+        if(flag==true){
+            alert("login successfull");
+        }else{
+            alert("No Account Found! Please Sign Up First");
+        
+        }
+    }
+        function imgFunc(){
+          window.location.href="index.html";
+        }
+        function signUpFunc(){
+        window.location.href="signup.html";
+       }
+       function google() {
+        window.location.href = "google.com"
+       }
+       function fb() {
+        window.location.href = "fb.com"
+       }
+
+        
+      </script>
+
+</html>

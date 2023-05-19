@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #header {
+            display: flex;
+            justify-content: space-between;
+            border: 0px solid rgb(56, 51, 51);
+            height: 50px;
+            box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+            position:sticky;
+            top:0px;
+            background-color: white;
+            left: 0px;
+            right: 0px;
+            padding: 7px;
+            margin-top: 10px;
+        }
+        #logo {
+            width: 80%;
+            margin-left: 45%;
+            cursor: pointer;
+        }
+        #subheader {
+            display: flex;
+            border: 0px solid red;
+            width: 40%;
+            justify-content: space-between;
+            margin: auto;
+        }
+        .selects {
+            font-weight: bold;
+            border: none;
+            font-size: 14px;
+        }
+        .buttons {
+            margin: auto;
+            height:60%;
+            font-weight: bold;
+            border: none;
+            background-color: white;
+        }
+        .hovers:hover {
+            color: #1978ff;
+        }
+        .signUp {
+            background-color: #1978ff;
+            margin: 10px;
+            color: white;
+            border-radius: 5px;
+            border: none;
+            padding: 10px;
+            padding: 10px;
+        }
+        #sign {
+            margin-right: 15%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+        }
+
+        #mainsec {
+            display: flex;
+            margin: auto;
+            background-color: #d1e1ff;
+            justify-content: space-evenly;
+            padding: 40px;
+        }
+        #sec > div:nth-child(1){
+            font-size: 30px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        #sec > div:nth-child(2){
+            font-size: 21px;
+            letter-spacing: 1px;
+            color: rgb(85, 85, 85);
+        }
+        #sec > div:nth-child(3)> button{
+            background-color: #1978ff;
+            color: white;
+            padding: 15px;
+            border: none;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+        #sec > div:nth-child(3)> button:hover{
+            background-color: #0445a1;
+            color: rgb(252, 248, 248);
+        }
+        #video > div {
+            margin-top: 60px;
+        }
+        #main2 {
+            display: flex;
+            justify-content: space-evenly;
+            padding: 80px;
+        }
+        #main2 > div h1 {
+            font-size: 45px;
+            padding: 15px;
+            margin-left: 20px;
+        }
+        #main2 > div p {
+            font-size: 22px;
+            padding: 25px;
+            color: grey;
+            margin-left: 20px;
+        }
+        #main3 {
+            display: flex;
+            justify-content: space-evenly;
+            padding: 80px;
+        }
+        #main3 > div h1 {
+            font-size: 45px;
+            padding: 15px;
+            margin-left: 20px;
+        }
+        #main3 > div p {
+            font-size: 22px;
+            padding: 25px;
+            color: grey;
+            margin-left: 20px;
+        }
+        #main4 {
+            padding: 45px;
+        }
+        #main4 > div:nth-child(1) {
+            text-align: center;
+            font-size: 22px;
+            letter-spacing: 1px;
+        }
+        #main4 > div:nth-child(2) {
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .sect > h1 {
+            font-size: 44px;
+            padding-left: 60px;
+            padding-right: 60px;
+            border-bottom: 2px solid black;
+            text-align: center;
+            margin-top: 30px;
+            font-weight: bold;
+            color: rgb(41, 41, 41);
+        }
+        .sect > h3 {
+            font-size: 26px;
+            text-align: center;
+            margin-top: 30px;
+            color: rgb(41, 41, 41);
+        }
+        #main5 {
+            display: flex;
+            /* justify-content: center; */
+            padding: 50px;
+        }
+        #main5 > div:nth-child(1) {
+            width: 55%;
+        }
+        #main5 > div:nth-child(1) > img {
+            width: 50%;
+            margin-left: 270px;
+        }
+        #main5 > div:nth-child(2) {
+            width: 40%;
+            padding: 30px;
+            text-align: center;
+            margin-right: 50px;
+        }
+        #main5 > div:nth-child(2) > h1 {
+            font-size: 32px;
+            padding: 15px;
+            color: rgb(102, 96, 96); 
+        }
+        #main5 > div:nth-child(2) > h3 {
+            color: rgb(78, 78, 231);
+            font-size: 20px;
+            font-weight: none;
+        }
+        #main5 > div:nth-child(2) > button {
+            padding: 10px;
+            background-color: white;
+            color: rgb(78, 78, 231);
+            margin-top: 25px;
+            border: 2px solid rgb(78, 78, 231);
+            font-size: 16px;
+            font-weight: bold;
+        }
+        #main5 > div:nth-child(2) > button:hover {
+            background-color: rgb(78, 78, 231);
+            color: white;
+            cursor: pointer;
+        }
+        #m6 {
+        padding: 30px;
+        padding-top: 35px;
+        text-align: center;
+        font-size: 45px;
+        color: rgb(42, 41, 41);
+        background-color: #ecedef;
+       }
+        #main6 {
+            display: flex;
+            justify-content: space-evenly;
+            margin: auto;
+            background-color: #ecedef;
+            padding: 40px;
+            padding-left: 70px;
+            padding-right: 70px;
+        }
+        #main6 > div {
+            margin: auto;
+            text-align: center;
+            overflow: hidden;
+            transition: transform 2s;
+        }
+        #main6 > div:hover {
+            transform: scale(1.1);
+        }
+        #main6 > div > img {
+            width: 140px;
+            cursor: pointer;
+        }
+        #main6 > div > p {
+            font-size: 18px;
+            color: rgb(102, 96, 96); 
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        #main6 > div > h6 {
+            font-size: 18px;
+            color: rgb(78, 78, 231);
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+
+        #m7 {
+        padding: 30px;
+        padding-top: 35px;
+        text-align: center;
+        font-size: 45px;
+        color: rgb(42, 41, 41);
+       }
+        #main7 {
+            display: flex;
+            justify-content: space-evenly;
+            margin: auto;
+            padding: 40px;
+            padding-left: 70px;
+            padding-right: 70px;
+        }
+        #main7 > div {
+            margin: auto;
+            text-align: center;
+            overflow: hidden;
+            transition: transform 2s;
+        }
+        #main7 > div:hover {
+            transform: scale(1.1);
+        }
+        #main7 > div > img {
+            width: 320px;
+            cursor: pointer;
+        }
+        #main7 > div > p {
+            font-size: 18px;
+            color: rgb(102, 96, 96); 
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        #main7 > div > h6 {
+            font-size: 18px;
+            color: rgb(78, 78, 231);
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+
+        #m8 {
+        padding: 30px;
+        padding-top: 35px;
+        text-align: center;
+        font-size: 45px;
+        color: rgb(42, 41, 41);
+        background-color: #ecedef;
+       }
+        #main8 {
+            display: flex;
+            justify-content: space-evenly;
+            margin: auto;
+            background-color: #ecedef;
+            padding: 40px;
+            padding-bottom: 70px;
+            padding-left: 70px;
+            padding-right: 70px;
+        }
+        #main8 > div {
+            margin: auto;
+            text-align: center;
+            overflow: hidden;
+            padding: 30px;
+            /* transition: transform 2s; */
+        }
+        #main8 > div:hover {
+            transform: scale(1.1);
+        }
+        #main8 > div > img {
+            width: 80px;
+            cursor: pointer;
+        }
+        #main8 > div > h2 {
+            margin-top: 10px;
+            color: rgb(18, 17, 17);
+        }
+        #main8 > div > h6 {
+            font-size: 18px;
+            color: rgb(78, 78, 231);
+            cursor: pointer;
+            margin-top: 10px;
+        }
+       #bt {
+        display: flex;
+        margin: auto;
+        padding: 10px;
+        margin-top: -50px;
+        color: rgb(78, 78, 231);
+        align-items: center;
+        font-size: 16px;
+        border-radius: 5px;
+        border: 2px solid rgb(78, 78, 231);
+       }
+       #bt:hover {
+        background-color: rgb(78, 78, 231);
+        color: white;
+        border: none;
+        border-radius: 5px;
+       }
+       #main9 {
+        background-color: #ecedef;
+        margin-top: 60px;
+       }
+       #main9 > img {
+        display: block;
+        width: 100%;
+       }
+       #footer{
+            width:100%;
+            height:450px;
+            background-color: rgb(68, 68, 68);
+            color:white;
+            text-align:center;
+            clear:both;
+            line-height:80px ;
+            display: flex;
+            align-items: top;
+            justify-content: space-evenly;
+        }
+       #footer > div > h3 {
+        border-bottom: 1px solid rgb(255, 255, 255);
+        font-size: 16px;
+        font-weight: 300;
+        font-family: Arial, Helvetica, sans-serif;
+       }
+       .over {
+        display: flex;
+        flex-direction: column;
+       }
+       .over > a {
+        height: 35px;
+        color: white;
+        text-decoration: none;
+       }
+       .over > a:hover {
+        color: rgb(119, 119, 255);
+       }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <div>
+            <img onclick="funcRel()" id="logo" src="mentimeter logo.png" alt="">
+        </div>
+
+        <div id="subheader">
+            <!-- <h4>Work</h4> -->
+            <select class="selects hovers">
+                <option>Work</option>
+                <option>Live Polling</option>
+                <option>World Cloud</option>
+                <option>Quiz</option>
+                <option>Q&A</option>
+                <option>Survey</option>
+                <option>Presentations</option>
+            </select>
+
+            <select class="selects hovers">
+                <option>Education</option>
+                <option>Live Polling</option>
+                <option>World Cloud</option>
+                <option>Quiz</option>
+                <option>Q&A</option>
+                <option>Survey</option>
+                <option>Presentations</option>
+            </select>
+
+            <select class="selects hovers">
+                <option>Features</option>
+                <option>Live Polling</option>
+                <option>World Cloud</option>
+                <option>Quiz</option>
+                <option>Q&A</option>
+                <option>Survey</option>
+                <option>Presentations</option>
+            </select>
+            
+            <select  class="selects hovers">
+                <option>Reasources</option>
+                <option>Live Polling</option>
+                <option>World Cloud</option>
+                <option>Quiz</option>
+                <option>Q&A</option>
+                <option>Survey</option>
+                <option>Presentations</option>
+                </select>
+
+            <select  class="selects hovers">
+                <option>Pricing</option>
+                <option>Live Polling</option>
+                <option>World Cloud</option>
+                <option>Quiz</option>
+                <option>Q&A</option>
+                <option>Survey</option>
+                <option>Presentations</option>
+            </select>
+        </div>
+
+        <div id="sign" class="selects">
+            <button class="buttons hovers" onclick="logInFunc()">Log In</button>
+            <button class="signUp" onclick="signUpFunc()">Sign UP</button>
+        </div>
+    </div>
+
+    <div id="mainsec">
+        <div id="sec">
+           <div> <h1>Engage your audience <br> & eliminate awkward <br> silences</h1></div>
+            <div><p>Our easy-to-build presentations, interactive Polls, Quizzes, <br> and Word Clouds mean more participation and less stress</p></div>
+            <div><button onclick="myFun()">Sign up For Free</button></div>
+            <p>No credit card needed</p>
+        </div>
+        <div id="video">
+           <div><iframe width="560" height="315" src="https://www.youtube.com/embed/VpbXY98R39c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+        </div>
+    </div>
+
+    <div id="main2">
+        <div>
+            <video src="https://videos.ctfassets.net/rvt0uslu5yqp/1HaEtjhQmBp3ETI1weYALP/298cc7ecae7646e0c5f9ad66827c379c/Explainer_For_Presentation_small.mp4"></video>
+        </div>
+        <div>
+            <h1>Turn tough crowds into <br> engaged audiences</h1>
+            <p>Build an immediate connection with your audience and make them a part of your presentation.</p>
+            <p>Create an interactive experience letting everyone vote, ask questions, and interact throughout.</p>
+        </div>
+    </div>
+
+    <div id="main3">
+        <div>
+            <h1>Create truly unique <br> presentations </h1>
+            <p>Use a wide range of interactive slides to pose questions, <br> gather feedback, and connect with your audience.</p>
+            <p>Build an impressive slide deck in minutes, craft an insightful <br> icebreaker instantly, or find a new and creative way to <br> engage your audience!</p>
+        </div>
+        <div>
+            <video src="https://videos.ctfassets.net/rvt0uslu5yqp/4R5lHFwGP8Vd0ea0X7hFLU/a13b8ffd580e094cb10dfe9299d3ac16/Explainer_For_Interface_small.mp4"></video>
+        </div>
+    </div>
+
+    <div id="main4">
+        <div><h1>Millions of voices have <br> already been heard</h1></div>
+        <div>
+            <div class="sect">
+                <h1>600 M</h1>
+                <h3>Voters</h3>
+            </div>
+            <div class="sect">
+                <h1>19 M</h1>
+                <h3>Presenters</h3>
+            </div>
+            <div class="sect">
+                <h1>220+</h1>
+                <h3>Countries & territories</h3>
+            </div>
+        </div>
+    </div>
+
+    <div id="main5">
+        <div>
+            <img src="https://images.ctfassets.net/rvt0uslu5yqp/3ur1LkUzjZbEROejNobhF9/eb27bd1f1535d0632389733007de6b7d/teresa-homepage.png?fm=webp&w=1920&q=75" alt="">
+        </div>
+        <div>
+            <h1>"Mentimeter allows everyone to ask <br> questions, to get clarification or a <br> clearer understanding on subjects <br> resulting in a more fulfilling learning <br> experience."</h1>
+            <h3>Teresa Delfin, California State Polytechnic University</h3>
+            <button>Explore more stories</button>
+        </div>
+    </div>
+
+    <h1 id="m6">A feature for every need</h1>
+    <div id="main6">
+        <div>
+            <img src="https://images.ctfassets.net/rvt0uslu5yqp/8FGU0gXbFx8aeEWVI3m9b/b30473ebd3057cd1a7b68e77520ea96b/Group_188.png?fm=webp&w=256&q=75" alt="">
+            <h2>Dynamic Word Clouds</h2>
+            <p>A vibrant way to visualize your <br> audience's ideas</p>
+            <h6>Learn More</h6>
+        </div>
+        <div>
+            <img src="https://images.ctfassets.net/rvt0uslu5yqp/5c3huMm6gPc0U3RbouBtxd/30fd6130a65f5f11dfee026d52f793d3/Group_190.png?fm=webp&w=256&q=75" alt="">
+            <h2>Live & Instant Polling</h2>
+            <p>Let your audience answer any <br> question you may have for them</p>
+            <h6>Learn More</h6>
+        </div>
+        <div>
+            <img src="https://images.ctfassets.net/rvt0uslu5yqp/19SOqSBtiSKIaviCLhR5mG/f296a59bdb3ad59fb2512aebc8f504ac/Group_187.png?fm=webp&w=256&q=75" alt="">
+            <h2>Entertaining Quizzes</h2>
+            <p>Run factual, fun, or icebreaker <br> quizzes</p>
+            <h6>Learn More</h6>
+        </div>
+        <div>
+            <img src="https://images.ctfassets.net/rvt0uslu5yqp/JkjHYtRrnJbonf4fbGbfh/87bb2a8c531c305331157df47b109839/Group_189.png?fm=webp&w=256&q=75" alt="">
+            <h2>Informative Q&As</h2>
+            <p>Let your audience ask questions <br> without the fuss</p>
+            <h6>Learn More</h6>
+        </div>
+    </div>
+
+    <h1 id="m7">Want to become a better <br> presenter?</h1>
+    <div id="main7">
+        <div>
+            <img src="https://images.ctfassets.net/rvt0uslu5yqp/3uzrX7Ih8V7gutJbnFP2Zy/004f00d2bdce50d2bf83d35468b0a009/templates.svg?&w=640&q=75" alt="">
+            <h2>Templates</h2>
+            <p>Predesigned templates designed to be used <br> immediately</p>
+            <h6>Explore templates</h6>
+        </div>
+        <div>
+            <img src="https://images.ctfassets.net/rvt0uslu5yqp/6IEPl6aocyu1Fbc6DCUUCF/54a344a55e3cd2f52b07626fe944b767/dasdad.svg?&w=640&q=75" alt="">
+            <h2>Webinars</h2>
+            <p>Join our expert-led webinars to learn how to get <br> the most out of Mentimeter.</p>
+            <h6>Register now</h6>
+        </div>
+        <div>
+            <img src="https://images.ctfassets.net/rvt0uslu5yqp/5aeE6Lu3GYVKjArBmpVPw7/99ceac5729bab3a7ce115cc23aa077e3/Mentimeter_Web_Homepage_2021-10.svg?&w=640&q=75" alt="">
+            <h2>Mentimeter Academy</h2>
+            <p>Learn about the skill of presenting and the art of <br> presentation design</p>
+            <h6>Enroll today</h6>
+        </div>
+    </div>
+
+    <h1 id="m8">Works with your favorite apps</h1>
+    <div id="main8">
+        <div>
+            <img src="https://images.ctfassets.net/rvt0uslu5yqp/7aUI2h31ackdBUCEscM5r5/5126a73f3ed6c71842d58b8cef759652/Mentimeter_Applications_Web_Integrations_Bullets_2022-05.svg?&w=96&q=75" alt="">
+            <h2>Zoom</h2>
+            <h6>Learn More</h6>
+        </div>
+        <div>
+            <img src="https://images.ctfassets.net/rvt0uslu5yqp/17u5SPLvH0NXMZfWH62pY0/b5431ee5d4789c3030a6014f069969df/Mentimeter_Applications_Web_Integrations_Bullets_2022-04.svg?&w=96&q=75" alt="">
+            <h2>Microsoft Teams</h2>
+            <h6>Learn More</h6>
+        </div>
+        <div>
+            <img src="https://images.ctfassets.net/rvt0uslu5yqp/lfc5oEYr7LiP5jg00wpia/1469acaaf0f32644078da77c6e52bad7/Mentimeter_Applications_Web_Integrations_Bullets_2022-03.svg?&w=96&q=75" alt="">
+            <h2>Hopin</h2>
+            <h6>Learn More</h6>
+        </div>
+        <div>
+            <img src="https://images.ctfassets.net/rvt0uslu5yqp/3vMjb8IuoPzfVnrPxwkwbr/ac9f64855e1c1e9f63db4d7ff1768404/Mentimeter_Applications_Web_Integrations_Bullets_2022-02.svg?&w=96&q=75" alt="">
+            <h2>PowerPoint</h2>
+            <h6>Learn More</h6>
+        </div>
+    </div>
+    <button id="bt">Explore all of our integrations</button>
+
+    <div id="main9">
+        <img src="foot .png" alt="">
+    </div>
+
+    <div id="footer">
+        <div>
+            <h3>Features</h3>
+
+            <div class="over">
+                <a href="">Overview</a>
+                <a href="">Live Polling</a>
+                <a href="">Word Cloud</a>
+                <a href="">Quiz</a>
+                <a href="">Q&A</a>
+                <a href="">Survey</a>
+                <a href="">Presentation</a>
+                <a href="">Spring Wheel</a>
+            </div>
+        </div>
+
+        <div>
+            <h3>Reasources</h3>
+
+            <div class="over">
+                <a href="">Blog</a>
+                <a href="">How To</a>
+                <a href="">Solution</a>
+                <a href="">Template</a>
+                <a href="">Academy</a>
+                <a href="">Webinar</a>
+                <a href="">Comprasion</a>
+                <a href="">Stories</a>
+                <a href="">integrations</a>
+            </div>
+        </div>
+
+        <div>
+            <h3>Details</h3>
+
+            <div class="over">
+                <a href="">Legal</a>
+                <a href="">Policies</a>
+                <a href="">Accessibility</a>
+                <a href="">Help Center</a>
+                <a href="">Requirements</a>
+            </div>
+        </div>
+
+        <div>
+            <h3>About Us</h3>
+
+            <div class="over">
+                <a href="">Press Info</a>
+                <a href="">The Team</a>
+                <a href="">Job</a>
+                <a href="">Culture</a>
+                <a href="">Benifits</a>
+                <a href="">Contact Us</a>
+                <a href="">Climate</a>
+                <a href="">Investers</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    function logInFunc() {
+        window.location.href = "log.html";
+    }
+    function signUpFunc() {
+        window.location.href = "sign.html";
+    }
+    function myFun() {
+        window.location.href = "sign.html";
+    }
+    function funcRel() {
+        window.location.reload();
+    }
+</script>
